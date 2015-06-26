@@ -28,9 +28,7 @@ public class SignUpDaoImpl extends CustomHibernateDaoSupport implements SignUpDa
 	}
 	public UserSignupModel findBySignupModel(int mobile)
 	{
-		List list = getHibernateTemplate().find(
-                "from UserSignup where MobileNumber=?",mobile
-           );
+		List list = getHibernateTemplate().find("from UserSignupModel where mobile = ?" , mobile);
 	    return (UserSignupModel)list.get(0);
 	}
 
